@@ -1,12 +1,12 @@
-import './App.css'
-import Multer from './components/Multer'
-
+import './App.css';
+import Routes from './routers/routes';
 function App() {
-
   return (
     <>
+      <Routes />
     </>
   )
 }
 
 export default App
+
