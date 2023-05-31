@@ -17,7 +17,7 @@ export default function CardView(props) {
             id: product.id,
             title: product.title,
             price: product.price,
-            totalPrice: product.price * 1,
+            totalPrice: product.price,
             img: product.image,
             quantity: 1
         }

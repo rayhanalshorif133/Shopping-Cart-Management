@@ -1,5 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+/* 
+ const data = {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            totalPrice: product.price,
+            img: product.image,
+            quantity: product.quantity
+    }
+*/
+
 const initialState = {
     data: [],
     isLoading: false,
