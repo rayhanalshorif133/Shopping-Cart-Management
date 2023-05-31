@@ -2,10 +2,16 @@ import React from 'react'
 
 export default function Footer() {
 
+    const footerFixed = {
+        position: 'fixed',
+        bottom: '0',
+        width: '100%',
+        left: '0',
+    }
 
     return (
         <>
-            <footer className="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+            <footer className="bg-white rounded-lg shadow dark:bg-gray-900" style={footerFixed}>
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <div className="sm:flex sm:items-center sm:justify-between">
                         <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">

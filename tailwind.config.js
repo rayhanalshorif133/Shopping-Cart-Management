@@ -6,7 +6,11 @@ export default {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '65': '6.5rem',
+      },
+    },
   },
   plugins: [
     require('flowbite/plugin'),
