@@ -17,9 +17,11 @@ export default function CardView(props) {
             id: product.id,
             title: product.title,
             price: product.price,
+            totalPrice: product.price * 1,
             img: product.image,
+            quantity: 1
         }
-        disPatch(addBucket(item))
+        disPatch(addBucket(item));
     }
 
 
