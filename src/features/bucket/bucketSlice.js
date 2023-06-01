@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import useSessionStorage from "../../hooks/useSessionStorage";
 import { BUCKET } from "../../constants/sessionStorageConstant";
 
 const sessionStorage = window.sessionStorage;

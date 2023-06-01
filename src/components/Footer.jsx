@@ -1,13 +1,22 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 export default function Footer() {
 
 
     const bucketLength = useSelector((state) => state.bucket.data && state.bucket.data.length);
 
+    const location = useLocation();
+    var isFixed = 'relative';
 
-    const isFixed = bucketLength < 3 ? 'fixed' : 'relative';
+    if (location.pathname === '/') {
+        isFixed = 'relative';
+    }
+    else {
+        isFixed = bucketLength < 3 ? 'fixed' : 'relative';
+    }
+
 
     const footerFixed = {
         position: isFixed,
