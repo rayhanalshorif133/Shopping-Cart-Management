@@ -4,6 +4,9 @@ import Navbar from './components/header/Navbar';
 import Home from './pages/home/Home';
 import Footer from './components/Footer';
 import BucketView from './features/bucket/BucketView';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <>
@@ -15,6 +18,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+      <ToastContainer />
     </>
   )
 }

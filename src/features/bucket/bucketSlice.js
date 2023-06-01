@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { BUCKET } from "../../constants/sessionStorageConstant";
+import { toast } from "react-toastify";
 
 const sessionStorage = window.sessionStorage;
 const keyName = BUCKET;
@@ -58,14 +59,29 @@ const bucketSlice = createSlice({
                     }
                     return item;
                 });
+                toast.success('Quantity successfully added', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 1500,
+                    theme: "colored",
+                });
             } else {
                 state.data.push(action.payload);
+                toast.success('Add to cart success', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 1500,
+                    theme: "colored",
+                });
             }
             sessionStorage.setItem(keyName, JSON.stringify(state.data));
         },
         removeBucket: (state, action) => {
             state.data = state.data.filter((item) => item.id !== action.payload);
             sessionStorage.setItem(keyName, JSON.stringify(state.data));
+            toast.error('Item remove to Bucket', {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 1500,
+                theme: "colored",
+            });
         },
         removeItemBucket: (state, action) => {
             var isExist = state.data.find((item) => item.id === action.payload);
@@ -88,6 +104,11 @@ const bucketSlice = createSlice({
                     }
                     return item;
                 });
+                toast.warn('One Item remove to Bucket', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 1500,
+                    theme: "colored",
+                });
             } else {
                 state.isLoading = false;
                 state.status = "idle";
@@ -103,7 +124,6 @@ const bucketSlice = createSlice({
             return items;
         },
         addQtyByInput: (state, action) => {
-            console.log(action.payload);
             var isExist = state.data.find((item) => item.id === action.payload.id);
             if (isExist) {
                 state.data = state.data.map((item) => {
