@@ -106,5 +106,5 @@ const bucketSlice = createSlice({
 });
 
 const { reducer, actions } = bucketSlice;
-export const { addBucket, removeBucket, updateBucket, getBucket, removeItemBucket, bucketTotalPrice } = actions;
+export const { addBucket, removeBucket, updateBucket, removeItemBucket, bucketTotalPrice } = actions;
 export default reducer;
