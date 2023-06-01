@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import useSessionStorage from "../../hooks/useSessionStorage";
+import { BUCKET } from "../../constants/sessionStorageConstant";
 
+const sessionStorage = window.sessionStorage;
+const keyName = BUCKET;
 /* 
  const data = {
             id: product.id,
@@ -10,6 +14,14 @@ import { createSlice } from "@reduxjs/toolkit";
             quantity: product.quantity
     }
 */
+
+// session storage
+const defaultValue = [];
+const storedValue = sessionStorage.getItem(keyName);
+if (!storedValue) {
+    sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
+}
+
 
 const initialState = {
     data: [],
@@ -38,6 +50,7 @@ const bucketSlice = createSlice({
                 });
             } else {
                 state.data.push(action.payload);
+                sessionStorage.setItem(keyName, JSON.stringify(state.data));
             }
         },
         removeBucket: (state, action) => {
