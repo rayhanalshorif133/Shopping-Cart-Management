@@ -40,7 +40,7 @@ export default function ProductItem({ item, index }) {
 
                 <div className="grid grid-cols-6 gap-2">
                     <div className='m-auto'>
-                        <img className="py-3 px-5 object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                        <img className="product_image py-3 px-5 object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                             src={item.img} alt="" />
                     </div>
                     <div className='m-auto'>

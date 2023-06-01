@@ -1,0 +1,21 @@
+.empty_cart:hover,
+.product_image:hover {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: popup 2.3s linear infinite;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

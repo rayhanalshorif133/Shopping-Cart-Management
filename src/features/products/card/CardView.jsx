@@ -29,7 +29,7 @@ export default function CardView(props) {
         <div key={product.id}>
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                    <img className="rounded-t-lg product__image text-center justify-center mx-auto mt-2" src={product.image} alt="" height="100px" width={400} />
+                    <img className="product_image rounded-t-lg product__image text-center justify-center mx-auto mt-2" src={product.image} alt="" height="100px" width={400} />
                 </a>
                 <div className="p-5">
                     <a href="#">

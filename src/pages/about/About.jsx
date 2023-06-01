@@ -24,7 +24,7 @@ export default function About() {
             var randomImage = Math.floor(Math.random() * images.length);
             setFlag(!flag);
             setSource(images[randomImage]);
-        }, 5000);
+        }, 3000);
     }, [flag]);
 
 
