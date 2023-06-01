@@ -6,7 +6,7 @@ export default function About() {
 
 
     const [flag, setFlag] = useState(true);
-    const [source, setSource] = useState('/public/images/about/redux.png');
+    const [source, setSource] = useState('images/about/redux.png');
 
     const images = [
         'images/about/flowbite.jpg',
