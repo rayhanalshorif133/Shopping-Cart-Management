@@ -20,6 +20,7 @@ const defaultValue = [];
 var storedValue = sessionStorage.getItem(keyName);
 if (!storedValue) {
     sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
+    location.reload();
 } else {
     storedValue = JSON.parse(storedValue);
 }
