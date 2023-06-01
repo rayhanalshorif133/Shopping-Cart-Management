@@ -12,9 +12,11 @@ export default function Footer() {
 
     if (location.pathname === '/') {
         isFixed = 'relative';
+    } else if (location.pathname === '/cart') {
+        isFixed = bucketLength < 3 ? 'fixed' : 'relative';
     }
     else {
-        isFixed = bucketLength < 3 ? 'fixed' : 'relative';
+        isFixed = 'fixed';
     }
 
 

@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import BucketView from './features/bucket/BucketView';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import About from './pages/about/About';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/Cart' element={<BucketView />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/cart' element={<BucketView />} />
         </Routes>
         <Footer />
       </BrowserRouter>
