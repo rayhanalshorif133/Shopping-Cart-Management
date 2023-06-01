@@ -8,7 +8,6 @@ export default function QuantityHandler(props) {
     const { id } = props;
     const [input, setInput] = React.useState(true); // [false, function
     const inputRef = useRef(null);
-    const spanRef = useRef(null);
     const dispatch = useDispatch();
 
     const quantity = useSelector(state => state.bucket.data.find(item => item.id === id).quantity);
@@ -26,10 +25,6 @@ export default function QuantityHandler(props) {
 
     const handleOnChange = (e) => {
         const upQuantity = e.target.value;
-        if (upQuantity < 1) {
-            setNewQuantity(quantity);
-            return;
-        }
         setNewQuantity(upQuantity);
     }
 
@@ -44,16 +39,13 @@ export default function QuantityHandler(props) {
         <>
             {
                 input ? <>
-                    <span onClick={handleToggleInput} className="bg-purple-100 text-purple-800 text-xl font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400" ref={spanRef}>
+                    <span onClick={handleToggleInput} className="bg-purple-100 text-purple-800 text-xl font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">
                         {newQuantity}
                     </span>
                 </> :
                     <>
                         <input type="text" id="first_name"
-                            className="bg-gray-50 border border-gray-300
-                         text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
-                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={newQuantity} onBlur={handleToggleInput} onChange={handleOnChange} name='inputQty' ref={inputRef} />
+                            className="w-20 bg-purple-100 text-purple-900 text-xl font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400" value={newQuantity} onBlur={handleToggleInput} onChange={handleOnChange} name='inputQty' ref={inputRef} />
                     </>
             }
 
