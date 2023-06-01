@@ -101,10 +101,31 @@ const bucketSlice = createSlice({
             }
             sessionStorage.setItem(keyName, JSON.stringify(state.data));
             return items;
+        },
+        addQtyByInput: (state, action) => {
+            console.log(action.payload);
+            var isExist = state.data.find((item) => item.id === action.payload.id);
+            if (isExist) {
+                state.data = state.data.map((item) => {
+                    if (item.id === action.payload.id) {
+                        const newItem = {
+                            ...item,
+                            quantity: action.payload.quantity,
+                            totalPrice: item.price * action.payload.quantity,
+                        }
+                        return newItem;
+                    }
+                    return item;
+                });
+            } else {
+                state.isLoading = false;
+                state.status = "idle";
+            }
+            sessionStorage.setItem(keyName, JSON.stringify(state.data));
         }
     }
 });
 
 const { reducer, actions } = bucketSlice;
-export const { addBucket, removeBucket, updateBucket, removeItemBucket, bucketTotalPrice } = actions;
+export const { addBucket, removeBucket, updateBucket, removeItemBucket, bucketTotalPrice, addQtyByInput } = actions;
 export default reducer;
