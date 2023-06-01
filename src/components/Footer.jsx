@@ -1,9 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 export default function Footer() {
 
+
+    const bucketLength = useSelector((state) => state.bucket.data && state.bucket.data.length);
+
+
+    const isFixed = bucketLength < 3 ? 'fixed' : 'relative';
+
     const footerFixed = {
-        position: 'fixed',
+        position: isFixed,
         bottom: '0',
         width: '100%',
         left: '0',

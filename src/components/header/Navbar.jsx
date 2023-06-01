@@ -1,12 +1,18 @@
 import React from 'react'
 import { FaCartPlus } from "react-icons/fa";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
 export default function Navbar() {
 
-    const bucketLength = useSelector((state) => state.bucket.data.length);
+    const bucketLength = useSelector((state) => {
+        const length = state.bucket.data.map((item) => item.quantity).reduce((acc, item) => {
+            return acc + item;
+        }, 0);
+        return length;
+    });
+
 
 
     return (

@@ -17,18 +17,26 @@ const keyName = BUCKET;
 
 // session storage
 const defaultValue = [];
-const storedValue = sessionStorage.getItem(keyName);
+var storedValue = sessionStorage.getItem(keyName);
 if (!storedValue) {
     sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
+} else {
+    storedValue = JSON.parse(storedValue);
 }
 
 
 const initialState = {
-    data: [],
+    data: storedValue,
     isLoading: false,
     error: null,
     status: "idle",
+    totalQuantity: 0,
+    totalPrice: 0,
+    msg: "Message Not Found"
 };
+
+
+
 
 
 const bucketSlice = createSlice({
@@ -37,40 +45,66 @@ const bucketSlice = createSlice({
     reducers: {
         addBucket: (state, action) => {
             var isExist = state.data.some((item) => item.id === action.payload.id);
+            state.msg = "Item Added to Bucket";
             if (isExist) {
                 state.data = state.data.map((item) => {
                     if (item.id === action.payload.id) {
-                        return {
+                        const newItem = {
                             ...item,
                             quantity: item.quantity + 1,
-                            totalPrice: item.price * (item.quantity + 1)
+                            totalPrice: item.price * (item.quantity + 1),
                         }
+                        return newItem;
                     }
                     return item;
                 });
             } else {
                 state.data.push(action.payload);
-                sessionStorage.setItem(keyName, JSON.stringify(state.data));
             }
+            sessionStorage.setItem(keyName, JSON.stringify(state.data));
         },
         removeBucket: (state, action) => {
             state.data = state.data.filter((item) => item.id !== action.payload);
+            sessionStorage.setItem(keyName, JSON.stringify(state.data));
         },
-        updateBucket: (state, action) => {
-            state.data = state.data.map((item) => {
-                if (item.id === action.payload.id) {
-                    return action.payload;
-                }
-                return item;
-            });
+        removeItemBucket: (state, action) => {
+            var isExist = state.data.find((item) => item.id === action.payload);
+            if (isExist) {
+                state.data = state.data.map((item) => {
+                    if (item.id === action.payload) {
+                        if (item.quantity - 1 < 1) {
+                            state.isLoading = false;
+                            state.status = "idle";
+                            state.msg = "Please Item delete from bucket";
+                        } else {
+                            state.msg = "Item remove to Bucket";
+                            const newItem = {
+                                ...item,
+                                quantity: item.quantity - 1,
+                                totalPrice: item.price * (item.quantity - 1),
+                            }
+                            return newItem;
+                        }
+                    }
+                    return item;
+                });
+            } else {
+                state.isLoading = false;
+                state.status = "idle";
+            }
+            sessionStorage.setItem(keyName, JSON.stringify(state.data));
         },
-        getBucket: (state) => {
-            state.isLoading = true;
-            state.status = "collecting";
+        bucketTotalPrice: (state) => {
+            const items = {
+                ...state,
+                totalPrice: state.data.reduce((total, item) => total + item.totalPrice, 0),
+            }
+            sessionStorage.setItem(keyName, JSON.stringify(state.data));
+            return items;
         }
     }
 });
 
 const { reducer, actions } = bucketSlice;
-export const { addBucket, removeBucket, updateBucket, getBucket } = actions;
+export const { addBucket, removeBucket, updateBucket, getBucket, removeItemBucket, bucketTotalPrice } = actions;
 export default reducer;
