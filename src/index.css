@@ -49,4 +49,12 @@
   .product_card img{
     @apply sm:h-48 sm:w-48 sm:mx-auto;
   }
+
+
+  footer div div a{
+    @apply text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200;
+  }
+  footer div div a span{
+    @apply sm:text-sm md:text-lg xl:text-xl xxl:text-2xl;
+  }
 }
