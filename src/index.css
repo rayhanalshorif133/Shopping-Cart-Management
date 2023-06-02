@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 @layer components{
+
+  .container{
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .logo_name{
+   @apply xxl:max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4;
+  }
+
+  .logo_name img{
+    @apply h-8 w-auto sm:h-10;
+  }
+
+  .name{
+    @apply sm:text-sm xxl:text-2xl;
+  }
+
+  .nav_cart_bucket .count{
+    @apply absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-indigo-700 px-2.5 py-1 text-center align-baseline text-xs font-bold leading-none text-white;
+  }
+
+  .nav_cart_bucket .icon{
+    @apply flex items-center justify-center rounded-lg bg-blue-500 p-2 text-center text-white shadow-lg dark:text-gray-200;
+  }
+
   .btn{
     @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
   }
@@ -16,5 +41,12 @@
   }
   .delete_item_btn{
    @apply text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-2.5 py-2.5 text-center mr-2 mb-2;
+  }
+  .product_card{
+    @apply w-full sm:w-64 sm:p-5 xl:max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+  }
+
+  .product_card img{
+    @apply sm:h-48 sm:w-48 sm:mx-auto;
   }
 }
