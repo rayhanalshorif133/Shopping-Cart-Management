@@ -1,8 +1,8 @@
-import React from 'react'
-import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
+import React from 'react';
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import QuantityHandler from './QuantityHandler';
 import { addBucket, bucketTotalPrice, removeBucket, removeItemBucket } from '../bucketSlice';
+import QuantityHandler from './QuantityHandler';
 
 
 export default function ProductItem({ item, index }) {
@@ -69,7 +69,7 @@ export default function ProductItem({ item, index }) {
                         </p>
                     </div>
                     <div className='m-auto'>
-                        <button type="button" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-2.5 py-2.5 text-center mr-2 mb-2"
+                        <button type="button" className="delete_item_btn"
                             onClick={() => handleDeleteBtn(item.id)}>
                             <FaTrash />
                         </button>
