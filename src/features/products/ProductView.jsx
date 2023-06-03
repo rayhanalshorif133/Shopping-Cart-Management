@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import CardView from './card/CardView';
 
 export default function ProductView({ data }) {
     return (
         <div>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-center m-auto">
                 {
                     data && data.map((product, index) => {
                         return (

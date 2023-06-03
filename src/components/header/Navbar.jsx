@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { FaCartPlus } from "react-icons/fa";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
@@ -18,21 +18,21 @@ export default function Navbar() {
     return (
         <>
             <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <div className="logo_name">
                     <a href="/Shopping-Cart-Management" className="flex items-center">
                         <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span className="name self-center font-semibold whitespace-nowrap dark:text-white">
                             Shopping Cart App
                         </span>
                     </a>
                     <div className="flex md:order-2">
                         <Link to='/cart'>
-                            <div className="relative inline-flex w-fit cursor-pointer">
+                            <div className="relative inline-flex w-fit cursor-pointer nav_cart_bucket">
                                 <div
-                                    className="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-indigo-700 px-2.5 py-1 text-center align-baseline text-xs font-bold leading-none text-white">
+                                    className="count">
                                     {bucketLength}
                                 </div>
-                                <div className="flex items-center justify-center rounded-lg bg-blue-500 px-2 py-2 text-center text-white shadow-lg dark:text-gray-200">
+                                <div className="icon">
                                     <FaCartPlus />
                                 </div>
                             </div>

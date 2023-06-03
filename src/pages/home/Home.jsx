@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../features/products/productsSlice';
 import Loading from '../../components/Loading';
 import ProductView from '../../features/products/ProductView';
+import { fetchProducts } from '../../features/products/productsSlice';
 
 export default function Home() {
 
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className='mt-12'>
-      <div className="p-4 mt-2 mb-4 text-lg text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+      <div className="alert" role="alert">
         <strong className="font-bold">PRODUCTS</strong>
 
       </div>
