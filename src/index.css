@@ -34,20 +34,42 @@
   .alert{
     @apply p-4 mt-2 mb-4 text-lg text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400;
   }
-  .add_to_cart_btn {
-   @apply cursor-pointer inline-flex items-center px-3 py-2 text-sm font-medium text-center
-                     text-white bg-blue-700 rounded-lg hover:bg-blue-800 
-                     focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
-  }
+  
   .delete_item_btn{
    @apply text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-2.5 py-2.5 text-center mr-2 mb-2;
   }
   .product_card{
-    @apply w-full sm:w-64 sm:p-5 xl:max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+    @apply w-full sm:w-64 md:w-48 sm:p-5 xl:max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
   }
 
   .product_card img{
-    @apply sm:h-48 sm:w-48 sm:mx-auto;
+    @apply sm:h-48 sm:w-48 sm:mx-auto md:w-48 rounded-t-lg text-center justify-center mx-auto mt-2;
+  }
+
+  .product_card div h5{
+    @apply mb-1 sm:text-sm font-bold tracking-tight text-gray-900 dark:text-white sm:line-clamp-none md:line-clamp-2;
+  }
+
+  .addToCardSm{
+    @apply sm:p-2 sm:text-[12px] sm:rounded-[5px];
+  }
+
+  .addToCardMd{
+    @apply md:text-md xxl:px-3 xxl:py-2  md:font-medium lg:rounded-lg add_to_cart_btn_common;
+  }
+  .addToCardXl{
+     @apply md:text-md;
+  }
+
+  .product_card .add_to_cart_btn{
+    @apply addToCardSm add_to_cart_btn_common;
+  }
+
+  .add_to_cart_btn_common {
+   @apply cursor-pointer inline-flex items-center text-center
+                     text-white bg-blue-700 hover:bg-blue-800 
+                     focus:ring-4 focus:outline-none focus:ring-blue-300 
+                     dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
   }
 
 

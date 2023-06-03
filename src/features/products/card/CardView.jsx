@@ -1,10 +1,8 @@
 import React from 'react';
-
 import { FaPlusSquare } from "react-icons/fa";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { addBucket } from '../../bucket/bucketSlice';
 import './CardView.css';
-
 export default function CardView(props) {
 
     const { product } = props;
@@ -28,13 +26,11 @@ export default function CardView(props) {
     return (
         <div key={product.id} className="product_card">
             <a href="#">
-                <img className="product_image rounded-t-lg product__image text-center justify-center mx-auto mt-2" src={product.image} alt="" height="100px" width={400} />
+                <img src={product.image} alt="" />
             </a>
             <div className="p-5">
                 <a href="#">
-                    <h5 className="mb-1 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
-                        {product.title}
-                    </h5>
+                    <h5>{product.title}</h5>
                 </a>
                 <p className="mb-2 font-normal text-gray-700 dark:text-gray-400">
                     {product.category}
