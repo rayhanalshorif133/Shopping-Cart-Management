@@ -18,6 +18,9 @@ export default {
       spacing: {
         '65': '6.5rem',
       },
+      gap: {
+        '18': '4.5rem',
+      }
     },
   },
   plugins: [

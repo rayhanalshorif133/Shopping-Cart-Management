@@ -23,39 +23,15 @@ export default function ListOfProducts({ data }) {
 
 
     return (
-        <div className=''>
+        <>
             <div className="mb-2 sm:py-2 sm:text-sm xl:py-3 md:py-2 md:text-md justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <div className="grid grid-cols-6 xl:gap-28 md:gap-65">
-                    <div className='m-auto'>
-                        <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Image
-                        </h5>
-                    </div>
-                    <div className='m-auto'>
-                        <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Title
-                        </h5>
-                    </div>
-                    <div className='m-auto'>
-                        <p className="text-xl font-bold text-gray-700 dark:text-gray-400">
-                            Price
-                        </p>
-                    </div>
-                    <div className='m-auto'>
-                        <p className="text-xl font-bold text-gray-700 dark:text-gray-400">
-                            Quantity
-                        </p>
-                    </div>
-                    <div className='m-auto'>
-                        <p className="text-xl font-bold text-gray-700 dark:text-gray-400">
-                            Total Price
-                        </p>
-                    </div>
-                    <div className='m-auto'>
-                        <p className="text-xl font-bold text-gray-700 dark:text-gray-400">
-                            Remove
-                        </p>
-                    </div>
+                <div className="cart_nav">
+                    <h5>Image</h5>
+                    <h5>Title</h5>
+                    <h5>Price</h5>
+                    <h5>Quantity</h5>
+                    <h5>Total Price</h5>
+                    <h5>Remove</h5>
                 </div>
             </div>
             {
@@ -64,27 +40,20 @@ export default function ListOfProducts({ data }) {
                 })
             }
             <div className="mb-2 sm:py-2 sm:text-sm xl:py-3 md:py-2 md:text-md justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <div className="grid grid-cols-6 xl:gap-28 md:gap-65">
-                    <div className='m-auto'>
+                <div className="cart_footer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <h5>Total Price</h5>
                     </div>
                     <div className='m-auto'>
-                    </div>
-                    <div className='m-auto'>
-                    </div>
-                    <div className='m-auto'>
-                        <p className="text-xl font-bold text-gray-700 dark:text-gray-400">
-                            Total Price
-                        </p>
-                    </div>
-                    <div className='m-auto'>
-                        <p className="text-xl font-bold text-gray-700 dark:text-gray-400">
-                            {totalPrice}
-                        </p>
+                        <h5>{totalPrice}</h5>
                     </div>
                     <div className='m-auto'>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

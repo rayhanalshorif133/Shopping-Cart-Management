@@ -72,6 +72,14 @@
     @apply cursor-pointer inline-flex items-center text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
   }
 
+  .cart_nav,.cart_footer{
+    @apply sm:gap-0 md:gap-6 md:p-2 lg:gap-18 xl:gap-28 xxl:gap-36 grid grid-cols-6 ;
+  }
+
+  .cart_nav h5, .cart_footer h5{
+    @apply sm:text-[10px] md:text-[15px] lg:text-[15px] xl:text-[16px] tracking-tight text-gray-900 dark:text-white font-bold ;
+  }
+
 
   footer div div a {
     @apply text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200;
