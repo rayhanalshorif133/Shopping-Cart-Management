@@ -80,6 +80,10 @@
     @apply sm:text-[10px] md:text-[15px] lg:text-[15px] xl:text-[16px] tracking-tight text-gray-900 dark:text-white font-bold;
   }
 
+  .cart_nav_details h5{
+    @apply sm:text-[10px] md:text-[15px] lg:text-[15px] xl:text-[16px] tracking-tight text-gray-900 dark:text-white font-bold py-2;
+  }
+
   .cart_product_item{
     @apply lg:grid grid-cols-6 gap-2;
   }

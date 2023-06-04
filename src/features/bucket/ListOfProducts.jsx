@@ -24,7 +24,7 @@ export default function ListOfProducts({ data }) {
 
     return (
         <>
-            <div className="mb-2 sm:py-2 sm:text-sm xl:py-3 md:py-2 md:text-md justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div className="sm:hidden md:hidden lg:block mb-2 lg:py-2 lg:text-sm xl:py-3 lg:text-[15px] justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <div className="cart_nav">
                     <h5>Image</h5>
                     <h5>Title</h5>
@@ -32,6 +32,11 @@ export default function ListOfProducts({ data }) {
                     <h5>Quantity</h5>
                     <h5>Total Price</h5>
                     <h5>Remove</h5>
+                </div>
+            </div>
+            <div className="sm:block md:block lg:hidden mb-2 lg:py-2 lg:text-sm xl:py-3 lg:text-[15px] justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <div className="cart_nav_details">
+                    <h5>Cart Item Details</h5>
                 </div>
             </div>
             {

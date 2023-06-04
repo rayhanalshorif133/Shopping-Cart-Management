@@ -47,11 +47,12 @@ export default function ProductItem({ item, index }) {
                         </h5>
                     </div>
                     <div className='m-auto'>
-                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                        <p className="font-normal text-gray-700 dark:text-gray-400 sm:mt-3 md:mt-3">
                             <span className='xxl:hidden xl:hidden lg:hidden font-bold mr-3'>Price:</span>{item.price}
                         </p>
                     </div>
-                    <div className='m-auto quantity__container'>
+                    <div className='m-auto'>
+                        <div className='quantity__container'>
                         <span className='xxl:hidden xl:hidden lg:hidden font-bold mr-3'>Quantity:</span>
                         <button type="button" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-2.5 py-2.5 text-center mr-2 mb-2" onClick={() => handlePlusBtn(item.id)}>
                             <FaPlus />
@@ -61,18 +62,22 @@ export default function ProductItem({ item, index }) {
                             onClick={() => handleMinusBtn(item.id)}>
                             <FaMinus />
                         </button>
+                        </div>
                     </div>
+
                     <div className='m-auto'>
                         <p className="font-normal text-gray-700 dark:text-gray-400">
                             <span className='xxl:hidden xl:hidden lg:hidden font-bold sm:mr-3'>Total Price:</span>
                             {parseFloat(item.totalPrice).toFixed(2)}
                         </p>
                     </div>
-                    <div className='m-auto sm:my-4'>
-                        <button type="button" className="delete_item_btn"
-                            onClick={() => handleDeleteBtn(item.id)}>
-                            <FaTrash />
-                        </button>
+                    <div className='m-auto'>
+                        <div className='sm:my-4'>
+                             <button type="button" className="delete_item_btn"
+                                 onClick={() => handleDeleteBtn(item.id)}>
+                                 <FaTrash />
+                             </button>
+                        </div>
                     </div>
                 </div>
             </div>
