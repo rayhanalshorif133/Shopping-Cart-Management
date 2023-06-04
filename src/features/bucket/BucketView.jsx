@@ -7,9 +7,8 @@ import EmptyBucket from './_partials/EmptyBucket';
 export default function BucketView() {
 
     const buckets = useSelector(state => state.bucket);
-    const { data, isLoading, error, status } = buckets;
+    const { data, isLoading} = buckets;
 
-    console.log(data.length);
 
     return (
         <div className='mt-12'>

@@ -36,24 +36,23 @@ export default function ProductItem({ item, index }) {
     }
     return (
         <>
-            <div key={index} className="mb-5 justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-
-                <div className="grid grid-cols-6 gap-2">
+            <div key={index} className="cart_product mb-5 justify-center m-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <div className='cart_product_item'>
                     <div className='m-auto'>
-                        <img className="product_image py-3 px-5 object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                            src={item.img} alt="" />
+                        <img src={item.img} alt="" />
                     </div>
                     <div className='m-auto'>
-                        <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="font-bold tracking-tight text-gray-900 dark:text-white">
                             {item.title}
                         </h5>
                     </div>
                     <div className='m-auto'>
                         <p className="font-normal text-gray-700 dark:text-gray-400">
-                            {item.price}
+                            <span className='xxl:hidden xl:hidden lg:hidden font-bold mr-3'>Price:</span>{item.price}
                         </p>
                     </div>
-                    <div className='m-auto'>
+                    <div className='m-auto quantity__container'>
+                        <span className='xxl:hidden xl:hidden lg:hidden font-bold mr-3'>Quantity:</span>
                         <button type="button" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-2.5 py-2.5 text-center mr-2 mb-2" onClick={() => handlePlusBtn(item.id)}>
                             <FaPlus />
                         </button>
@@ -65,10 +64,11 @@ export default function ProductItem({ item, index }) {
                     </div>
                     <div className='m-auto'>
                         <p className="font-normal text-gray-700 dark:text-gray-400">
+                            <span className='xxl:hidden xl:hidden lg:hidden font-bold sm:mr-3'>Total Price:</span>
                             {parseFloat(item.totalPrice).toFixed(2)}
                         </p>
                     </div>
-                    <div className='m-auto'>
+                    <div className='m-auto sm:my-4'>
                         <button type="button" className="delete_item_btn"
                             onClick={() => handleDeleteBtn(item.id)}>
                             <FaTrash />
