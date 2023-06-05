@@ -8,28 +8,28 @@ export default function Footer() {
     const bucketLength = useSelector((state) => state.bucket.data && state.bucket.data.length);
 
     const location = useLocation();
-    var isFixed = 'relative';
+    // var isFixed = 'relative';
 
-    if (location.pathname === '/') {
-        isFixed = 'relative';
-    } else if (location.pathname === '/cart') {
-        isFixed = bucketLength < 3 ? 'fixed' : 'relative';
-    }
-    else {
-        isFixed = 'fixed';
-    }
+    // if (location.pathname === '/') {
+    //     isFixed = 'relative';
+    // } else if (location.pathname === '/cart') {
+    //     isFixed = bucketLength < 3 ? 'fixed' : 'relative';
+    // }
+    // else {
+    //     isFixed = 'fixed';
+    // }
 
 
-    const footerFixed = {
-        position: isFixed,
-        bottom: '0',
-        width: '100%',
-        left: '0',
-    }
+    // const footerFixed = {
+    //     position: isFixed,
+    //     bottom: '0',
+    //     width: '100%',
+    //     left: '0',
+    // }
 
     return (
         <>
-            <footer className="bg-white rounded-lg shadow dark:bg-gray-900" style={footerFixed}>
+            <footer className="bg-white rounded-lg shadow dark:bg-gray-900">
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <div className="sm:flex sm:items-center sm:justify-between">
                         <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">

@@ -112,4 +112,15 @@
   footer div div a span {
     @apply sm:text-sm md:text-lg xl:text-xl xxl:text-2xl;
   }
+
+  /* 
+  position: isFixed,
+        bottom: '0',
+        width: '100%',
+        left: '0',
+  */
+
+  footer{
+    @apply sm:relative bottom-0 w-full left-0;
+  }
 }
