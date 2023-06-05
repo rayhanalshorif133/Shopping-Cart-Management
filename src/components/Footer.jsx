@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -6,30 +6,36 @@ export default function Footer() {
 
 
     const bucketLength = useSelector((state) => state.bucket.data && state.bucket.data.length);
+    const [isFixed, setIsFixed] = React.useState('relative');
 
-    const location = useLocation();
-    // var isFixed = 'relative';
+    const location = useLocation();   
+    
+    useEffect(() => {
+        if (location.pathname === '/') {
+            setIsFixed('relative');
+        } else if (location.pathname === '/cart') {
+            setIsFixed(bucketLength < 3 ? 'fixed' : 'relative');
+        }
+        else {
+            setIsFixed('fixed');
+        }
+        const windowSize = window.innerWidth;
+        if (windowSize > 772) {
+            location.pathname != '/about'? setIsFixed('relative') : setIsFixed('fixed');
+        }
+        window.addEventListener('resize', () => {
+            const windowSize = window.innerWidth;
+            if (windowSize > 772) {
+                location.pathname != '/about'? setIsFixed('relative') : setIsFixed('fixed');
+            }
+        });
+        bucketLength === 0 && setIsFixed('fixed');
+    }, [isFixed,bucketLength,location.pathname]);
 
-    // if (location.pathname === '/') {
-    //     isFixed = 'relative';
-    // } else if (location.pathname === '/cart') {
-    //     isFixed = bucketLength < 3 ? 'fixed' : 'relative';
-    // }
-    // else {
-    //     isFixed = 'fixed';
-    // }
-
-
-    // const footerFixed = {
-    //     position: isFixed,
-    //     bottom: '0',
-    //     width: '100%',
-    //     left: '0',
-    // }
 
     return (
         <>
-            <footer className="bg-white rounded-lg shadow dark:bg-gray-900">
+            <footer style={{position:isFixed}}>
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <div className="sm:flex sm:items-center sm:justify-between">
                         <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">
