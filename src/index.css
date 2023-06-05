@@ -72,6 +72,38 @@
     @apply cursor-pointer inline-flex items-center text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
   }
 
+  .cart_nav,.cart_footer{
+    @apply sm:gap-0 md:gap-6 md:p-2 lg:gap-18 xl:gap-28 xxl:gap-36 grid grid-cols-6;
+  }
+
+  .cart_nav h5, .cart_footer h5{
+    @apply sm:text-[10px] md:text-[15px] lg:text-[15px] xl:text-[16px] tracking-tight text-gray-900 dark:text-white font-bold;
+  }
+
+  .cart_nav_details h5{
+    @apply sm:text-[10px] md:text-[15px] lg:text-[15px] xl:text-[16px] tracking-tight text-gray-900 dark:text-white font-bold py-2;
+  }
+
+  .cart_product_item{
+    @apply lg:grid grid-cols-6 gap-2;
+  }
+
+  .cart_product_item img {
+    @apply sm:py-1 sm:px-3 sm:object-cover sm:w-1/2 sm:mt-3 sm:m-auto sm:h-auto rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg;
+  }
+
+  .cart_product_item h5{
+    @apply sm:text-[14px] sm:px-4;
+  }
+
+  .cart_product_item .quantity__container{
+    @apply sm:mt-3 md:mt-4;
+  }
+
+  .cart_product_item .quantity__container button{
+    @apply sm:text-[8px] md:text-[10px] md:mt-2 xl:text-[12px] xxl:text-[14px];
+  }
+
 
   footer div div a {
     @apply text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200;
@@ -79,5 +111,10 @@
 
   footer div div a span {
     @apply sm:text-sm md:text-lg xl:text-xl xxl:text-2xl;
+  }
+
+
+  footer{
+    @apply bg-white rounded-lg shadow dark:bg-gray-900 bottom-0 w-full left-0;
   }
 }
